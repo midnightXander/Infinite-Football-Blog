@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+{% load bootstrap5 %}
+{% block content %}
+
+<form action="{%  url 'core:add_post' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <input type="text" name="category" placeholder="enter the category name">
+    
+    <p>The cover image</p>
+    <input  type="file" name="cover_image">
+
+
+    {{form.media}}
+    {{form.as_p}}
+
+    <button type="submit">Add</button>
+</form>
+
+{% endblock content %}

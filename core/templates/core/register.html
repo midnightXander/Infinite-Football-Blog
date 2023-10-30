@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+
+
+{% block content %}
+{% for message in messages %}
+<div>
+
+<style>
+        h5{
+            color:red;
+        }
+</style>
+    <h5>{{message}}</h5>
+
+</div>
+
+{% endfor %}
+<form action="" method="post">
+{% csrf_token %}
+    
+    <input type="text" name="username" placeholder="Enter your username"><br><br>
+    <input type="password" name="password1" placeholder="create your password"><br><br>
+    <input type="password" name="password2" placeholder="confirm password"><br><br>
+    
+    <input type="email" name="email" placeholder="Enter your email"><br><br>
+    
+    <button type="submit">register</button>
+</form>
+
+{% endblock content %}

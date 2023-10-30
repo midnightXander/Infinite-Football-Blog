@@ -1,0 +1,34 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+{% for post in posts %}
+
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+      <h3 class="text-body-emphasis">{{post.title}}</h3>
+    
+        <img src="{{post.cover_image.url}}" width="50%" height="50%">
+      
+      <p class="lead">
+        posted by <em>{{post.owner}}</em> on {{post.date_added | date:'d M,Y '}}
+        <br><br>
+        {{post | safe}}
+        <a href="{% url 'core:post' post.category.name post.id %}">Continue reading</a>
+ 
+      </p>
+    </div>
+  </div>
+<!--
+<ul>
+    <li>
+    
+        <h3></h3>
+        <br><br>
+        <span>posted by <em>{{post.owner}}</em> on {{post.date_added | date:'d M,Y '}}</span>
+        <p><p>
+                   
+    </li>
+</ul>
+-->
+{% endfor %}
+{% endblock content %}
