@@ -1,0 +1,1 @@
+web: gunicorn if_blog.wsgi --log-file -
