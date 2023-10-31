@@ -8,7 +8,7 @@ from django.contrib import messages
 from .forms import PostForm
 from .models import BlogPost,Category
 from bs4 import BeautifulSoup
-
+import random
 from random import choice
 from itertools import chain
 
@@ -26,7 +26,8 @@ def post(request,category_name,post_id):
 
 def category(request,category_name):
     """posts from a specific category"""
-    category = Category.objects.get(name=category_name)
+
+    category = get_object_or_404(Category,name=category_name)
     posts = category.blogpost_set.order_by('-date_added')
 
     context = {"posts":posts,"category":category}
