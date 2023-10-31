@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponseRedirect,Http404
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -9,7 +9,7 @@ from .forms import PostForm
 from .models import BlogPost,Category
 from bs4 import BeautifulSoup
 
-import random
+from random import choice
 from itertools import chain
 
 
@@ -26,7 +26,7 @@ def post(request,category_name,post_id):
 
 def category(request,category_name):
     """posts from a specific category"""
-    category = Category.objects.get(name=category_name)
+    category = get_object_or_404(Category, name=category_name)
     posts = category.blogpost_set.order_by('-date_added')
 
     context = {"posts":posts,"category":category}
@@ -42,7 +42,7 @@ def index(request):
     head_posts = all_posts[:2]
     all_main_posts = [x for x in all_posts if(x not in list(recent_posts) and list(head_posts))]
     main_posts = all_main_posts[:2]
-    long_head_post = all_main_posts[-1]
+    long_head_post = choice(all_main_posts)
 
     context = {"all_posts":all_posts,"recent_posts":recent_posts,"head_posts":head_posts,"main_posts":main_posts, "long_head_post":long_head_post}
     return render(request,"core/index.html",context)
