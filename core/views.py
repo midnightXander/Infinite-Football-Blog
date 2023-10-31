@@ -42,7 +42,7 @@ def index(request):
     head_posts = all_posts[:2]
     all_main_posts = [x for x in all_posts if(x not in list(recent_posts) and list(head_posts))]
     main_posts = all_main_posts[:2]
-    long_head_post = choice(all_main_posts)
+    long_head_post = all_main_posts[-1]
 
     context = {"all_posts":all_posts,"recent_posts":recent_posts,"head_posts":head_posts,"main_posts":main_posts, "long_head_post":long_head_post}
     return render(request,"core/index.html",context)
