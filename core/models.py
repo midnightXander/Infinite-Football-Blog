@@ -14,7 +14,7 @@ class Category(models.Model):
 class BlogPost(models.Model):
     """A typical blog post"""
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
-    title = models.CharField(max_length=60)
+    title = models.CharField(max_length=80)
     text = RichTextField()
     date_added = models.DateTimeField(auto_now_add=True)
     cover_image = models.ImageField(upload_to='posts_images')

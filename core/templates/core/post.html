@@ -3,7 +3,18 @@
 {% block content %}
 
 <main class="container">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '7c60b05b6967b2c8628f38363dad5172',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/7c60b05b6967b2c8628f38363dad5172/invoke.js"></scr' + 'ipt>');
+  </script>
 <div class="my-5">
+
     <div class="p-5 text-center bg-body-tertiary">
       <div class="container py-5">
         <h1 class="text-body-emphasis">
@@ -25,6 +36,9 @@
         <p class="col-lg-8 mx-auto lead">
             {{post.text | safe}}
         </p>
+        {% if post.bodyImage %}
+        <img src="{{post.bodyImage.url}}" width="100%" height="300%"/>
+        {% endif %}
       </div>
     </div>
   </div>
