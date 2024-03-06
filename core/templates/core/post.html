@@ -32,7 +32,7 @@
                 {% endif %}    
             </small>
         </h1>
-        <img src="{{post.cover_image.url}}" width="100%" height="300%"/>
+        <img id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="100%"/>
         <p class="col-lg-8 mx-auto lead">
             {{post.text | safe}}
         </p>
@@ -43,12 +43,26 @@
     </div>
   </div>
   <div>
+
+    <div class="ad-container">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '7c60b05b6967b2c8628f38363dad5172',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/7c60b05b6967b2c8628f38363dad5172/invoke.js"></scr' + 'ipt>');
+      </script>
+      </div>
+
     <h4 class="fst-italic">Recent posts</h4>
     {% for post in recent_posts %}
     <ul class="list-unstyled">
       <li>
         <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{% url 'core:post' post.category.name post.id %}">
-          <img id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="96" >
+          <img id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="50%" >
           <!--
         <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
           --><div class="col-lg-8">

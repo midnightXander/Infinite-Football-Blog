@@ -22,6 +22,6 @@ class BlogPost(models.Model):
     owner = models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.text[:50]+"..."
+        return self.text[:85]+"..."
 
 

@@ -33,6 +33,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG','') != 'False'
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ['https://web-production-1458.up.railway.app']
 
 # Application definition
 
