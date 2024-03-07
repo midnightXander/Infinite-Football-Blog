@@ -28,12 +28,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-clp*5%l!ffl_mmg
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-#DEBUG = True
-DEBUG = os.environ.get('DJANGO_DEBUG','') != 'False' 
+DEBUG = False
+#DEBUG = os.environ.get('DJANGO_DEBUG','') != 'False' 
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-1458.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://infinite-football.up.railway.app']
 
 # Application definition
 

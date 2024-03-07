@@ -36,14 +36,20 @@ def category(request,category_name):
 
 def index(request):
     """The index page displaying the different posts"""
-    all_posts = BlogPost.objects.all().order_by("-date_added")
-    recent_posts = all_posts[:3]
-    all_posts = list(all_posts)
-    random.shuffle(all_posts)
-    head_posts = all_posts[:2]
-    all_main_posts = [x for x in all_posts if(x not in list(recent_posts) and list(head_posts))]
-    main_posts = all_main_posts[:2]
-    long_head_post = choice(all_main_posts)
+    all_posts = BlogPost.objects.all().order_by("-date_added") #get all posts
+    recent_posts = all_posts[:3] #get the  3 most recent posts 
+
+    # all_posts = list(all_posts)
+    # random.shuffle(all_posts)
+    # head_posts = all_posts[:2]
+    # all_main_posts = [x for x in all_posts if(x not in list(recent_posts) and x not  in list(head_posts))]
+    # main_posts = all_main_posts[:2]
+    # long_head_post = choice(all_main_posts)
+
+    head_posts = all_posts[3:5]
+    main_posts = all_posts[5:7]
+    long_head_post = all_posts[7]
+
 
     context = {"all_posts":all_posts,"recent_posts":recent_posts,"head_posts":head_posts,"main_posts":main_posts, "long_head_post":long_head_post}
     return render(request,"core/index.html",context)
