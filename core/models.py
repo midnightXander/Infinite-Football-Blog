@@ -17,6 +17,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=80)
     text = RichTextField()
     date_added = models.DateTimeField(auto_now_add=True)
+    #it was posts_images without the /
     cover_image = models.ImageField(upload_to='posts_images/')
     bodyImage = models.ImageField(upload_to='posts_images/',blank=True) 
     owner = models.ForeignKey(User,on_delete=models.CASCADE)
