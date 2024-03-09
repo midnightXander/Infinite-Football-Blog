@@ -11,12 +11,12 @@
     
   <div class="long-head">
      <!-- class="p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary" -->
-      <div class="col-lg-6 px-0">
+      <div class="col-lg-6 px-0" style="padding-bottom: 1rem;">
         <h3 class="display-0 goldenrod">{{long_head_post.title}}</h3>
         <p class="lead my-3">{{long_head_post | safe}}</p>
-        <p class="lead mb-0">Continue reading...</p>
+        <p class="mb-0 lead-to">Continue reading...</p>
       </div>
-      <script>console.log("{{long_head_post.cover_image}}")</script>
+      <!-- <script>console.log("{{long_head_post.cover_image}}")</script> -->
       <div id="img-holder">
       <!-- <img src="{{long_head_post.cover_image.url}}" width="100%" height="100%" alt="" width="100%" height="100%"> -->
     
@@ -43,12 +43,13 @@
     <div class="col  d-flex flex-column position-static">
       <a href="{% url 'core:post' post.category.name post.id %}" class="icon-link gap-1 icon-link-hover stretched-link">
       <div class="hp-img">
-        <img src="{{post.cover_image.url}}" width="100%" height="100%" alt="">
+        <!-- <img src="{{post.cover_image.url}}" width="100%" height="100%" alt=""> -->
+        <img src="{% static post.cover_image %}" width="100%" height="100%" alt="post image">
       </div>      
       <strong class="d-inline-block mb-2 text-primary-emphasis">{{post.category.name}} - <span>{{post.date_added | date:'M d, Y'}}</span></strong>
       <h3 style="font-size:1.2rem" class="mb-0 goldenrod">{{post.title}}</h3>
       <p class="card-text mb-auto">{{post | safe}}</p>
-        <p>Continue reading <svg width="15px" height="15px" class="bi"><use xlink:href="#chevron-right"/></svg></p>
+        <p  class="lead-to">Continue reading <svg width="15px" height="15px" class="bi"><use xlink:href="#chevron-right"/></svg></p>
         
       </a>
       
@@ -114,7 +115,8 @@
 
           
             {% if post.body_image %}
-            <img src="{{post.body_image.url}}" width="50px" height="50px">
+            <!-- <img src="{{post.body_image.url}}" width="50px" height="50px"> -->
+            <img src="{% static post.body_image %}" width="200px" height="200px" alt="post image">
             {% endif %}
             <p>
                 {{post.text | safe}}
@@ -125,8 +127,6 @@
         {% empty %}
         <p style="padding:30px">More to come</p>
   {% endfor %}
-       
-  
       </div>
   
       <div class="col-md-4">
@@ -144,7 +144,8 @@
             <ul class="list-unstyled">
               <li>
                 <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{% url 'core:post' post.category.name post.id %}">
-                  <img style="border-radius: 5px;" id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="70%" >
+                  <!-- <img style="border-radius: 5px;" id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="70%" > -->
+                  <img style="border-radius: 5px;" id="main-post-img" src="{% static post.cover_image %}" width="100%" height="70%" alt="main post image">
                   <div class="col-lg-8">
                     <h6 class="mb-0 goldenrod">{{post.title}}</h6>
                     <small class="text-body-secondary">{{post.date_added |date:'M d, Y'}}</small>

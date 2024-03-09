@@ -32,12 +32,14 @@
                 {% endif %}    
             </small>
         </h1>
-        <img id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="100%"/>
+        <!-- <img id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="100%"/> -->
+        <img id="main-post-img" src="{% static post.cover_image %}" width="100%" height="100%" alt="post cover image">
         <p class="col-lg-8 mx-auto lead">
             {{post.text | safe}}
         </p>
         {% if post.bodyImage %}
-        <img src="{{post.bodyImage.url}}" width="100%" height="300%"/>
+        <!-- <img src="{{post.bodyImage.url}}" width="100%" height="300%"/> -->
+        <img src="{% static post.body_image %}" width="100%" height="100%" alt="post body image">
         {% endif %}
       </div>
     </div>
@@ -62,7 +64,8 @@
     <ul class="list-unstyled">
       <li>
         <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{% url 'core:post' post.category.name post.id %}">
-          <img id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="50%" >
+          <!-- <img id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="50%" > -->
+          <img id="main-post-img" src="{% static post.cover_image %}" width="100%" height="50%" alt="recent post image">
           <!--
         <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
           --><div class="col-lg-8">
@@ -75,54 +78,5 @@
     {% endfor %}
   </div>
   </main>
-  <!--
-<div class="panel panel-default">
-    
-    <div class="panel-heading">    
-        <h3>
-            {{post.title}} - {{post.date_added |date:'M d, Y'}}
-            <h4>posted by 
-                 <em>{{post.owner}}</em>
-                </h4>
-            <small>
-                {% if user.is_authenticated %}
-                {% if user.username == 'denzel' %}
-                <a href="{% url 'core:edit_post' post.id %}">
-                    <i class="fa fa-edit"> Edit Post</i>
-                </a>
-                {% endif %}
-                {% endif %}    
-            </small>
-        </h3>    
-    </div>
-
-    <div class="panel-body">
-       
-        <p style="padding:2rem;">
-        <img src="{{post.cover_image.url}}" width="300px" height="300px"/>
-       </p>
-
-       <section>
-    <p style="margin: left 20px;;">>
-     {{post.text | linebreaks}}
-    </p>
-       </section>
-
-    </div>
-    
-</div>--><!-- panel-->
-
-
-
-<!--
-    <strong>{{post.title}}</strong>
-    <span>posted by <em>{{post.owner}}</em> on {{post.date_added | date:'d M, Y'}}</span>
-    
-        <p>
-    {{post.text}}
-    </p> 
-        <a href="{% url 'core:edit_post' post.id %}">
-            Edit Post
-        </a>
-    -->
+  
 {% endblock content %}
