@@ -24,5 +24,6 @@ urlpatterns = [
     path('',include("core.urls",namespace="core")),
 ]
 
+#Try settings.DEBUG: //add urlpatterns if DEBUG is TRUE and don't if False
 urlpatterns = urlpatterns + static(settings.MEDIA_URL,
 document_root=settings.MEDIA_ROOT)
