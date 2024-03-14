@@ -158,7 +158,7 @@
               <li>
                 <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{% url 'core:post' post.category.name post.id %}">
                   <!-- <img style="border-radius: 5px;" id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="70%" > -->
-                  <img style="border-radius: 5px;" id="main-post-img" src="{% static post.cover_image %}" width="100%" height="70%" alt="main post image">
+                  <img style="border-radius: 5px;" id="main-post-img" src="{% static post.cover_image %}" width="100%" height="80%" alt="main post image">
                   <div class="col-lg-8">
                     <h6 class="mb-0 goldenrod">{{post.title}}</h6>
                     <small class="text-body-secondary">{{post.date_added |date:'M d, Y'}}</small>

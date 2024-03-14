@@ -6,7 +6,7 @@ from django.contrib.auth.models import User,auth
 from django.contrib.auth import login,logout,authenticate
 from django.contrib import messages
 from .forms import PostForm
-from .models import BlogPost,Category
+from .models import BlogPost,Category,Match
 from bs4 import BeautifulSoup
 import random
 from random import choice
@@ -153,4 +153,13 @@ def edit_post(request,post_id):
         context = {"form":form}
         return render(request,"core/edit_post.html",context)
 
-        return render(request,"core/edit_post.html")    
+        # return render(request,"core/edit_post.html")    
+
+def matches(request):
+    all_matches = Match.objects.all() 
+    all_posts = BlogPost.objects.all().order_by("-date_added")
+    recent_posts = all_posts[:3]
+
+    context = {'matches':all_matches,'recent_posts':recent_posts}
+    return render(request,"core/matches.html",context)
+            
