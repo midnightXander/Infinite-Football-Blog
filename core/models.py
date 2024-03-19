@@ -38,6 +38,6 @@ class Match(models.Model):
     class Meta:
         verbose_name_plural = 'Matches'
     def __str__(self):
-        return self.team1[:5] + " v " + self.team2[:5]
+        return self.team1[:5] + " vs " + self.team2[:5]
 
 

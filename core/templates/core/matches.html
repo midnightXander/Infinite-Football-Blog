@@ -62,11 +62,11 @@
     <a href="{{match.match_link}}" target="_blank">
     <div class="head">
         <div class="team team-1">
-            <img width="100%" height="80%" src="{% static match.team1Logo %}" alt="Home team logo"/><p class="txt-align-c" >{{match.team1}}</p>
+            <img width="100%" height="100%" src="{% static match.team1Logo %}" alt="Home team logo"/><p class="txt-align-c" >{{match.team1}}</p>
         </div>
         <div class="center-txt">{{match.start_time |time:'' }}</div>
         <div class="team team-2">   
-            <img class="" width="100%" height="80%" src="{% static match.team2Logo %}" alt="Away team logo"/>
+            <img class="" width="100%" height="100%" src="{% static match.team2Logo %}" alt="Away team logo"/>
             <p class="txt-align-c">{{match.team2}}</p>
         </div>
     </div>
@@ -82,7 +82,7 @@
 </div>
 
 {% endfor  %}
-
+        <hr>
 <div class="ad-container">
     <script type="text/javascript">
       atOptions = {
