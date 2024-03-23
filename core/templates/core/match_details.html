@@ -73,26 +73,24 @@
     <div class="match-briefing">
         <div>
         <img src="{% static match.team1Logo %}" width="100" height="100" alt="team 1">
-        <h6>{{match.team1}}</h6>
+        <h6 class="text-align">{{match.team1}}</h6>
         </div>
         
         <span>VS</span>
         
         <div>
         <img src="{% static match.team2Logo %}" width="100" height="100" alt="team 2">
-        <h6>{{match.team2}}</h6>
+        <h6 class="text-align">{{match.team2}}</h6>
         </div>
     </div>
 
 
 
-
+<a href="{{match.match_link}}" target="_blank">
 <div class="forward-to">
-<!-- <a href="{{match.match_link}}"> -->
-    <a href="{{match.match_link}}" target="_blank">
     <h4>CLICK HERE TO WATCH NOW</h4>
-</a>
 </div>
+</a>
     <hr>
 <div class="whatsapp-links">
     <h5>Join Us on Whatsapp to stay updated</h5>
@@ -101,11 +99,15 @@
 </ul>
 </div>
        <hr>
-       
+
     <div class="alternative-links">
         <h6><i class="fa fa-question-circle-o" style="color: goldenrod;"></i> Your Link not working? try these ones</h6>
         <ul>
-            <li><a href="{{match.alt_link1}}" style="color: white;"><i class="fa fa-hand-o-right" style="color: white;"></i> Try here</a></li>
+            <a href="{{match.alt_link1}}" style="color: white;"><li><i class="fa fa-hand-o-right" style="color: white;"></i> Try here</li>
+            </a>
+
+            <a href="{{match.alt_link2}}" style="color: white;"><li><i class="fa fa-hand-o-right" style="color: white;"></i> Try here</li>
+            </a>
         </ul>
     </div>
         <hr>
