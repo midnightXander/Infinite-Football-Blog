@@ -1,0 +1,146 @@
+{% extends "core/base.html" %}
+{%  load static %}
+{% block content %}
+<style>
+    .forward-to{
+        text-align: center;
+        padding: 1rem;
+        background: rgb(250, 20, 20,70%);
+        color:white;
+        height: 70px;
+    }
+    .whatsapp-links{
+        border: 1px solid palegreen;
+        padding: 1rem;
+        h5{
+            text-align: center;
+        }
+        ul{
+            padding: 0.5rem;
+            list-style: none;
+
+            li{
+                border: 1px solid palegreen;
+                margin: 10px;
+                padding: 10px;
+                background-color: palegreen;
+            }
+        }
+    }
+    .match-briefing{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .alternative-links{
+        h6{
+            text-align: center;
+        }
+        ul{
+            padding: 0.5rem;
+            list-style: none;
+            li{
+                border:1px solid rgb(250, 20, 20,70%);
+                margin: 10px;
+                padding: 10px;
+                background-color: rgb(250, 20, 20,70%);
+            }
+        }
+    }
+</style>
+
+
+
+
+<div class="container">
+
+<div class="ad-container">
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'd5c793f03ee44fd43e39552004c2f345',
+            'format' : 'iframe',
+            'height' : 200,
+            'width' : 468,
+            'params' : {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/d5c793f03ee44fd43e39552004c2f345/invoke.js"></scr' + 'ipt>');
+    </script>
+
+</div>
+
+<hr>
+    <div class="match-briefing">
+        <div>
+        <img src="{% static match.team1Logo %}" width="100" height="100" alt="team 1">
+        <h6>{{match.team1}}</h6>
+        </div>
+        
+        <span>VS</span>
+        
+        <div>
+        <img src="{% static match.team2Logo %}" width="100" height="100" alt="team 2">
+        <h6>{{match.team2}}</h6>
+        </div>
+    </div>
+
+
+
+
+<div class="forward-to">
+<!-- <a href="{{match.match_link}}"> -->
+    <a href="{{match.match_link}}" target="_blank">
+    <h4>CLICK HERE TO WATCH NOW</h4>
+</a>
+</div>
+    <hr>
+<div class="whatsapp-links">
+    <h5>Join Us on Whatsapp to stay updated</h5>
+    <ul>
+    <li><a href="https://www.whatsapp.com/channel/0029VaRR6r905MUZoEIM6K3X?fbclid=IwAR1JpeEgYN3ZLi4zaTTp57BgMDZVccgawcbsQyP610tBrDCLN2Pmqqaqr3o"><i class="fa fa-whatsapp"></i> Whatsapp Channel</a></li>
+</ul>
+</div>
+       <hr>
+       
+    <div class="alternative-links">
+        <h6><i class="fa fa-question-circle-o" style="color: goldenrod;"></i> Your Link not working? try these ones</h6>
+        <ul>
+            <li><a href="{{match.alt_link1}}" style="color: white;"><i class="fa fa-hand-o-right" style="color: white;"></i> Try here</a></li>
+        </ul>
+    </div>
+        <hr>
+<div class="ad-container">
+
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '662e96a88623668190acf93d96b736c7',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 320,
+        'params' : {}
+      };
+      document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/662e96a88623668190acf93d96b736c7/invoke.js"></scr' + 'ipt>');
+    </script>
+</div>    
+
+<h4 class="fst-italic" style="margin-top:1rem;">Recent posts</h4>
+{% for post in recent_posts %}
+<ul class="list-unstyled">
+  <li>
+    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{% url 'core:post' post.category.name post.id %}">
+      <!-- <img id="main-post-img" src="{{post.cover_image.url}}" width="100%" height="50%" > -->
+      <img id="main-post-img" src="{% static post.cover_image %}" width="100%" height="50%" alt="recent post image">
+      <!--
+    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+      --><div class="col-lg-8">
+        <h6 class="mb-0">{{post.title}}</h6>
+        <small class="text-body-secondary">{{post.date_added |date:'M d, Y'}}</small>
+      </div>
+    </a>
+  </li>  
+</ul>
+{% endfor %}
+
+<div>
+
+{% endblock content %}

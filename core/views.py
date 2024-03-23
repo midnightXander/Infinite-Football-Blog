@@ -162,4 +162,12 @@ def matches(request):
 
     context = {'matches':all_matches,'recent_posts':recent_posts}
     return render(request,"core/matches.html",context)
-            
+
+
+def match_details(request,match_id):
+    match = Match.objects.get(id=match_id) 
+    all_posts = BlogPost.objects.all().order_by("-date_added")
+    recent_posts = all_posts[:3]
+
+    context = {'match':match,'recent_posts':recent_posts}
+    return render(request,"core/match_details.html",context)

@@ -35,6 +35,8 @@ class Match(models.Model):
     competition = models.CharField(max_length=40)
     matchday = models.CharField(max_length=30)
     match_link = models.TextField(blank=True)
+    alt_link1 = models.TextField(blank=True, default="")
+    alt_link2 = models.TextField(blank=True,default="")
     class Meta:
         verbose_name_plural = 'Matches'
     def __str__(self):
