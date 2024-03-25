@@ -171,3 +171,8 @@ def match_details(request,match_id):
 
     context = {'match':match,'recent_posts':recent_posts}
     return render(request,"core/match_details.html",context)
+
+def alt_links(request,match_id):
+    match = Match.objects.get(id=match_id) 
+    context = {'match':match}
+    return render(request,"core/alt_links.html",context)

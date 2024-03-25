@@ -1,56 +1,16 @@
 {% extends "core/base.html" %}
 {%  load static %}
 {% block content %}
-<style>
-    .forward-to{
-        text-align: center;
-        padding: 1rem;
-        background: rgb(250, 20, 20,70%);
-        color:white;
-        height: 70px;
-    }
-    .whatsapp-links{
-        border: 1px solid palegreen;
-        padding: 1rem;
-        h5{
-            text-align: center;
-        }
-        ul{
-            padding: 0.5rem;
-            list-style: none;
 
-            li{
-                border: 1px solid palegreen;
-                margin: 10px;
-                padding: 10px;
-                background-color: palegreen;
-            }
-        }
-    }
-    .match-briefing{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .alternative-links{
-        h6{
-            text-align: center;
-        }
-        ul{
-            padding: 0.5rem;
-            list-style: none;
-            li{
-                border:1px solid rgb(250, 20, 20,70%);
-                margin: 10px;
-                padding: 10px;
-                background-color: rgb(250, 20, 20,70%);
-            }
-        }
+<style>
+    .alternative{
+        padding: 10px;
+        padding-left: 20%; 
+        height: 50px;
+        background-color: rgb(250, 20, 20,70%);
+        color: aliceblue;
     }
 </style>
-
-
 
 
 <div class="container">
@@ -73,14 +33,14 @@
     <div class="match-briefing">
         <div>
         <img src="{% static match.team1Logo %}" width="100" height="100" alt="team 1">
-        <h6 class="text-align">{{match.team1}}</h6>
+        <h6 class="txt-align-c">{{match.team1}}</h6>
         </div>
         
         <span>VS</span>
         
         <div>
         <img src="{% static match.team2Logo %}" width="100" height="100" alt="team 2">
-        <h6 class="text-align">{{match.team2}}</h6>
+        <h6 class="txt-align-c">{{match.team2}}</h6>
         </div>
     </div>
 
@@ -92,6 +52,21 @@
 </div>
 </a>
     <hr>
+<a href="{{match.id}}/alt-links">
+    <h6 class="txt-align-c alternative"><i class="fa fa-random" style="color: goldenrod;"></i> Alternative Links</h6>
+</a>
+    <!-- <div class="alternative-links">
+        <h6><i class="fa fa-question-circle-o" style="color: goldenrod;"></i> Alternative Links</h6>
+        <ul>
+            <a href="{{match.alt_link1}}" style="color: white;"><li><i class="fa fa-hand-o-right" style="color: white;"></i> Try here</li>
+            </a>
+
+            <a href="{{match.alt_link2}}" style="color: white;"><li><i class="fa fa-hand-o-right" style="color: white;"></i> Try here</li>
+            </a>
+        </ul>
+    </div> -->
+        <hr>
+
 <div class="whatsapp-links">
     <h5>Join Us on Whatsapp to stay updated</h5>
     <ul>
@@ -100,17 +75,6 @@
 </div>
        <hr>
 
-    <div class="alternative-links">
-        <h6><i class="fa fa-question-circle-o" style="color: goldenrod;"></i> Your Link not working? try these ones</h6>
-        <ul>
-            <a href="{{match.alt_link1}}" style="color: white;"><li><i class="fa fa-hand-o-right" style="color: white;"></i> Try here</li>
-            </a>
-
-            <a href="{{match.alt_link2}}" style="color: white;"><li><i class="fa fa-hand-o-right" style="color: white;"></i> Try here</li>
-            </a>
-        </ul>
-    </div>
-        <hr>
 <div class="ad-container">
 
     <script type="text/javascript">

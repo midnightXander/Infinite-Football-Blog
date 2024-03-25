@@ -1,0 +1,51 @@
+{% extends "core/base.html" %}
+{%  load static %}
+{% block content %}
+
+<div class="container">
+
+<div class="ad-container">
+    <script type="text/javascript">
+        atOptions = {
+          'key' : '3bbefe8c4def4033015ff7cf3bca1f1d',
+          'format' : 'iframe',
+          'height' : 100,
+          'width' : 300,
+          'params' : {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/3bbefe8c4def4033015ff7cf3bca1f1d/invoke.js"></scr' + 'ipt>');
+      </script>
+
+</div>
+
+       <hr>
+
+    <div class="alternative-links">
+        <h6><i class="fa fa-random-o" style="color: goldenrod;"></i> Alternative links</h6>
+        <ul>
+            <a href="{{match.alt_link1}}" style="color: white;" target="_blank"><li><i class="fa fa-hand-o-right" style="color: white;" ></i> Try here</li>
+            </a>
+
+            <a href="{{match.alt_link2}}" target="_blank" style="color: white;"><li><i class="fa fa-hand-o-right" style="color: white;"></i> Try here</li>
+            </a>
+        </ul>
+    </div>
+        <hr>
+<div class="ad-container">
+
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '662e96a88623668190acf93d96b736c7',
+        'format' : 'iframe',
+        'height' : 200,
+        'width' : 320,
+        'params' : {}
+      };
+      document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/662e96a88623668190acf93d96b736c7/invoke.js"></scr' + 'ipt>');
+    </script>
+</div>    
+
+
+<div>
+
+{% endblock content %}
