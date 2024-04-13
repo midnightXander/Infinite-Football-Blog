@@ -337,6 +337,9 @@ nav{
             border: 1px solid lightskyblue;
             background-color: lightskyblue;
           }
+          i{
+            color: red;
+          }
         }
     }
 
@@ -349,6 +352,8 @@ nav{
   <link href="{% static 'css/jumbotrons.css' %}" rel="stylesheet">
   <link href="{% static 'css/sign-in.css' %}" rel="stylesheet">
   <!-- Custom styles for this template -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://unpkg.com/boxicons@2.1.4/dist/boxicons.js' rel='stylesheet'>
   
 </head>
 
@@ -356,12 +361,16 @@ nav{
   <div class="block-content">
     <div class="d-link">
       
-      <ul>
+      <!-- <ul>
         <li>Click on the button to unblock page</li>
         <li>you will be redirected to an external page</li>
         <li>After that you can come back to the matches page</li>
-      </ul>
-      <a href="https://www.profitablegatecpm.com/sth94uwc?key=40d46474416c9b1fffc91d1f99ab87ba" target="_blank"><button id="ad-btn">Unblock</button></a>
+      </ul> -->
+      
+        
+        <h6 class="txt-align-c"><i class="bx bxs-error bx-lg" id="warn-i"></i><br>Confirm You are not a Robot and get back to page
+          </h6>
+      <a href="https://www.profitablegatecpm.com/sth94uwc?key=40d46474416c9b1fffc91d1f99ab87ba" target="_blank"><button id="ad-btn">Confirm</button></a>
     </div>
   </div>
   <script>
