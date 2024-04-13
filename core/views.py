@@ -157,7 +157,7 @@ def edit_post(request,post_id):
 
 def matches(request):
     all_matches = Match.objects.all() 
-    all_posts = BlogPost.objects.all().order_by("-date_added")
+    all_posts = BlogPost.objects.all().order_by("date_added")
     recent_posts = all_posts[:3]
 
     context = {'matches':all_matches,'recent_posts':recent_posts}
