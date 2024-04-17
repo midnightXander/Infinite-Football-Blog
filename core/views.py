@@ -19,14 +19,12 @@ def post(request,category_name,post_id):
     all_posts = BlogPost.objects.all().order_by("-date_added")
     recent_posts = all_posts[:3]
     
-
     context = {"post":post,"recent_posts":recent_posts}
     return render(request,"core/post.html",context)
 
 
 def category(request,category_name):
     """posts from a specific category"""
-
     category = get_object_or_404(Category,name=category_name)
     posts = category.blogpost_set.order_by('-date_added')
 
